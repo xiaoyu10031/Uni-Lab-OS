@@ -298,12 +298,15 @@ class BaseROS2DeviceNode(Node, Generic[T]):
         self.node_name = f'{device_id.split("/")[-1]}'
         self.namespace = f"/devices/{device_id}"
         Node.__init__(self, self.node_name, namespace=self.namespace)  # type: ignore
-        if self.resource_tracker is None:
-            self.lab_logger().critical("资源跟踪器未初始化，请检查")
 
-        # 创建自定义日志记录器
+        # ✅ 首先创建自定义日志记录器，确保后续使用 lab_logger() 不会报错
         self._lab_logger = ROSLoggerAdapter(self.get_logger(), self.namespace)
 
+        # ⚠️ 然后再检查资源跟踪器
+        if self.resource_tracker is None:
+            self._lab_logger.critical("资源跟踪器未初始化，请检查")
+
+        # 初始化动作、属性等成员
         self._action_servers: Dict[str, ActionServer] = {}
         self._property_publishers = {}
         self._status_types = status_types
