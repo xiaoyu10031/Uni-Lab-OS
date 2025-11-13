@@ -428,31 +428,31 @@ def main():
                 port=args_dict["port"],
             )
     else:
-        import threading
-        from unilabos.ros.nodes.presets.camera import VideoPublisher
-        import rclpy, time
+        # import threading
+        # from unilabos.ros.nodes.presets.camera import VideoPublisher
+        # import rclpy, time
 
-        def start_camera_node():
-            print_status("等待 ROS2 backend 初始化...", "info")
-            for _ in range(50):
-                try:
-                    if rclpy.ok():
-                        break
-                except Exception:
-                    pass
-                time.sleep(0.1)
-            else:
-                print_status("⚠️ ROS2 backend 未启动，摄像头节点初始化可能失败", "warning")
+        # def start_camera_node():
+        #     print_status("等待 ROS2 backend 初始化...", "info")
+        #     for _ in range(50):
+        #         try:
+        #             if rclpy.ok():
+        #                 break
+        #         except Exception:
+        #             pass
+        #         time.sleep(0.1)
+        #     else:
+        #         print_status("⚠️ ROS2 backend 未启动，摄像头节点初始化可能失败", "warning")
 
-            try:
-                node = VideoPublisher()
-                print_status("✅ VideoPublisher 节点创建成功，交由全局执行器托管", "info")
-            except Exception as e:
-                print_status(f"❌ VideoPublisher 创建失败: {e}", "error")
+        #     try:
+        #         node = VideoPublisher()
+        #         print_status("✅ VideoPublisher 节点创建成功，交由全局执行器托管", "info")
+        #     except Exception as e:
+        #         print_status(f"❌ VideoPublisher 创建失败: {e}", "error")
 
-        # ✅ 让 VideoPublisher 线程先创建节点（不 spin）
-        threading.Thread(target=start_camera_node, daemon=True).start()
-        print_status("VideoPublisher 摄像头节点已在后台启动（发布 /video_publisher/video）", "info")
+        # # ✅ 让 VideoPublisher 线程先创建节点（不 spin）
+        # threading.Thread(target=start_camera_node, daemon=True).start()
+        # print_status("VideoPublisher 摄像头节点已在后台启动（发布 /video_publisher/video）", "info")
         start_backend(**args_dict)
         start_server(
             open_browser=not args_dict["disable_browser"],
