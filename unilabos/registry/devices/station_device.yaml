@@ -1,1 +1,359 @@
-{}
+station_device:
+  category:
+  - station_device
+  class:
+    action_value_mappings:
+      auto-connect:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        placeholder_keys: {}
+        result: {}
+        schema:
+          description: ''
+          properties:
+            feedback: {}
+            goal:
+              properties: {}
+              required: []
+              type: object
+            result: {}
+          required:
+          - goal
+          title: connect参数
+          type: object
+        type: UniLabJsonCommand
+      auto-disconnect:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        placeholder_keys: {}
+        result: {}
+        schema:
+          description: ''
+          properties:
+            feedback: {}
+            goal:
+              properties: {}
+              required: []
+              type: object
+            result: {}
+          required:
+          - goal
+          title: disconnect参数
+          type: object
+        type: UniLabJsonCommand
+      auto-home_all:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        placeholder_keys: {}
+        result: {}
+        schema:
+          description: ''
+          properties:
+            feedback: {}
+            goal:
+              properties: {}
+              required: []
+              type: object
+            result: {}
+          required:
+          - goal
+          title: home_all参数
+          type: object
+        type: UniLabJsonCommand
+      auto-load_points:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        placeholder_keys: {}
+        result: {}
+        schema:
+          description: ''
+          properties:
+            feedback: {}
+            goal:
+              properties: {}
+              required: []
+              type: object
+            result: {}
+          required:
+          - goal
+          title: load_points参数
+          type: object
+        type: UniLabJsonCommand
+      auto-move_rel_z:
+        feedback: {}
+        goal: {}
+        goal_default:
+          dz_mm: null
+        handles: {}
+        placeholder_keys: {}
+        result: {}
+        schema:
+          description: ''
+          properties:
+            feedback: {}
+            goal:
+              properties:
+                dz_mm:
+                  type: number
+              required:
+              - dz_mm
+              type: object
+            result: {}
+          required:
+          - goal
+          title: move_rel_z参数
+          type: object
+        type: UniLabJsonCommand
+      auto-move_to:
+        feedback: {}
+        goal: {}
+        goal_default:
+          accel: null
+          speed: null
+          x: null
+          y: null
+          z: null
+        handles: {}
+        placeholder_keys: {}
+        result: {}
+        schema:
+          description: ''
+          properties:
+            feedback: {}
+            goal:
+              properties:
+                accel:
+                  type: string
+                speed:
+                  type: string
+                x:
+                  type: string
+                y:
+                  type: string
+                z:
+                  type: string
+              required: []
+              type: object
+            result: {}
+          required:
+          - goal
+          title: move_to参数
+          type: object
+        type: UniLabJsonCommand
+      auto-move_to_direct:
+        feedback: {}
+        goal: {}
+        goal_default:
+          accel: null
+          speed: null
+          x: null
+          y: null
+          z: null
+          z_order: auto
+        handles: {}
+        placeholder_keys: {}
+        result: {}
+        schema:
+          description: ''
+          properties:
+            feedback: {}
+            goal:
+              properties:
+                accel:
+                  type: string
+                speed:
+                  type: string
+                x:
+                  type: string
+                y:
+                  type: string
+                z:
+                  type: string
+                z_order:
+                  default: auto
+                  type: string
+              required: []
+              type: object
+            result: {}
+          required:
+          - goal
+          title: move_to_direct参数
+          type: object
+        type: UniLabJsonCommand
+      auto-move_to_point:
+        feedback: {}
+        goal: {}
+        goal_default:
+          name: null
+          safe_mode: true
+        handles: {}
+        placeholder_keys: {}
+        result: {}
+        schema:
+          description: ''
+          properties:
+            feedback: {}
+            goal:
+              properties:
+                name:
+                  type: string
+                safe_mode:
+                  default: true
+                  type: boolean
+              required:
+              - name
+              type: object
+            result: {}
+          required:
+          - goal
+          title: move_to_point参数
+          type: object
+        type: UniLabJsonCommand
+      auto-move_to_work_direct:
+        feedback: {}
+        goal: {}
+        goal_default:
+          accel: null
+          speed: null
+          x: null
+          y: null
+          z: null
+          z_order: auto
+        handles: {}
+        placeholder_keys: {}
+        result: {}
+        schema:
+          description: ''
+          properties:
+            feedback: {}
+            goal:
+              properties:
+                accel:
+                  type: string
+                speed:
+                  type: string
+                x:
+                  type: string
+                y:
+                  type: string
+                z:
+                  type: string
+                z_order:
+                  default: auto
+                  type: string
+              required: []
+              type: object
+            result: {}
+          required:
+          - goal
+          title: move_to_work_direct参数
+          type: object
+        type: UniLabJsonCommand
+      auto-save_points:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        placeholder_keys: {}
+        result: {}
+        schema:
+          description: ''
+          properties:
+            feedback: {}
+            goal:
+              properties: {}
+              required: []
+              type: object
+            result: {}
+          required:
+          - goal
+          title: save_points参数
+          type: object
+        type: UniLabJsonCommand
+      auto-set_point_current:
+        feedback: {}
+        goal: {}
+        goal_default:
+          name: null
+        handles: {}
+        placeholder_keys: {}
+        result: {}
+        schema:
+          description: ''
+          properties:
+            feedback: {}
+            goal:
+              properties:
+                name:
+                  type: string
+              required:
+              - name
+              type: object
+            result: {}
+          required:
+          - goal
+          title: set_point_current参数
+          type: object
+        type: UniLabJsonCommand
+      auto-set_work_origin_here:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        placeholder_keys: {}
+        result: {}
+        schema:
+          description: ''
+          properties:
+            feedback: {}
+            goal:
+              properties: {}
+              required: []
+              type: object
+            result: {}
+          required:
+          - goal
+          title: set_work_origin_here参数
+          type: object
+        type: UniLabJsonCommand
+    module: unilabos.devices.synthonx3.services.station:Station
+    status_types:
+      point: String
+    type: python
+  config_info: []
+  description: station_device
+  handles: []
+  icon: ''
+  init_param_schema:
+    config:
+      properties:
+        baudrate:
+          default: 115200
+          type: integer
+        points_file:
+          default: points.json
+          type: string
+        port:
+          type: string
+      required:
+      - port
+      type: object
+    data:
+      properties:
+        point:
+          items:
+            type: number
+          type: array
+      required:
+      - point
+      type: object
+  registry_type: device
+  version: 1.0.0
